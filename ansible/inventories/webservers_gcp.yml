@@ -1,0 +1,12 @@
+plugin: gcp_compute
+zones:
+ - us-central1-a
+projects:
+  - nti-320-aliyas-project
+filters: []
+groups:
+  webservers: "'web-' in name"
+scopes:
+  - https://www.googleapis.com/auth/compute
+service_account_file: ~/ansible/nti-320-aliyas-project-031a9a1f63dc.json
+auth_kind: serviceaccount                    
