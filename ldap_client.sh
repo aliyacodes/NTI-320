@@ -18,7 +18,7 @@ sed -i 's/#nss_base_shadow.[ \t]*ou=People,dc=padl,dc=com?one/nss_base_shadow   
 
 systemctl restart sshd
 echo "P@ssw0rd1" > /etc/ldap.secret
-chown 06600 /etc/ldap.secret
+chown 0600 /etc/ldap.secret
 systemctl restart libnss-ldap
 
 apt -y install debconf-utils
