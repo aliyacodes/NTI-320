@@ -1,5 +1,17 @@
 #!/bin/bash
 
+for file in $( ls /etc/yum.repos.d/ ); do mv /etc/yum.repos.d/$file /etc/yum.repos.d/$file.bak; done
+echo "[nti-310-epel]
+name=NTI310 EPEL
+baseurl=http://104.197.59.12/epel
+gpgcheck=0
+enabled=1" >> /etc/yum.repos.d/local-repo.repo
+echo "[nti-310-base]
+name=NTI310 BASE
+baseurl=http://104.197.59.12/base
+gpgcheck=0
+enabled=1" >> /etc/yum.repos.d/local-repo.repo
+
 # start by installing the repos for mariadb 10 (required by cacti)
 
 echo "# MariaDB 10.1 CentOS repository list - created 2016-01-18 09:58 UTC
